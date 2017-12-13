@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DogAdoptionApp.Models.Shelter>
+
+@{
+    ViewBag.Title = "Shelters";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Shelters</h2>
+
+    <div class="btn">
+        @Html.ActionLink("Add a New Shelter", "Create")
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                Shelter's Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Website
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShelterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShelterAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShelterWebsite)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ShelterId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ShelterId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ShelterId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,60 @@
+﻿@model DogAdoptionApp.Models.PetDog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Dog's Details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Shelter.ShelterName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Shelter.ShelterName)
+            </dd>
+
+            <dt>
+                Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogName)
+            </dd>
+
+            <dt>
+                Breed
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogBreed)
+            </dd>
+
+            <dt>
+                Age
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogAge)
+            </dd>
+
+            <dt>
+                Gender
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogGender)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.DogId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

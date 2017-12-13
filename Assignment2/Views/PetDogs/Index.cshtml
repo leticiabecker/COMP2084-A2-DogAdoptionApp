@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DogAdoptionApp.Models.PetDog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Find a Dog</h2>
+    <h3>Do you know any dog waiting for a new home?</h3>
+    <p>Add the dog's information to our system and give them a new chance.</p>
+
+    <div class="btn">
+        @Html.ActionLink("Register a Dog", "Create")
+    </div>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>
+                Shelter
+            </th>
+            <th>
+                Dog's Name
+            </th>
+            <th>
+                Breed
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Shelter.ShelterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DogName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DogBreed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DogAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DogGender)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DogId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DogId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DogId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

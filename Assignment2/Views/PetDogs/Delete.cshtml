@@ -1,0 +1,68 @@
+﻿@model DogAdoptionApp.Models.PetDog
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Shelter.ShelterName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Shelter.ShelterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DogName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DogBreed)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogBreed)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DogAge)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogAge)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DogGender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DogGender)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>
