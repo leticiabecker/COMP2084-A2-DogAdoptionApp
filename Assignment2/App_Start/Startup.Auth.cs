@@ -7,6 +7,9 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using Assignment2.Models;
 
+// reference so we can read keys from web.config
+using System.Configuration;
+
 namespace Assignment2
 {
     public partial class Startup
@@ -58,11 +61,11 @@ namespace Assignment2
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = System.Configuration.ConfigurationManager.AppSettings["GoogleClientId"],
+                ClientSecret = System.Configuration.ConfigurationManager.AppSettings["GoogleClientSecret"]
+            });
         }
     }
 }
