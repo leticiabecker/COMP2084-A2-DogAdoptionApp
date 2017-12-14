@@ -10,10 +10,12 @@ using DogAdoptionApp.Models;
 
 namespace DogAdoptionApp.Controllers
 {
+    [Authorize]
     public class PetDogsController : Controller
     {
         private DogAdoptionAppModel db = new DogAdoptionAppModel();
 
+        [AllowAnonymous]
         // GET: PetDogs
         public ActionResult Index()
         {

@@ -8,6 +8,9 @@ namespace Assignment2
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            //ssl
+            filters.Add(new RequireHttpsAttribute());
         }
     }
 }
