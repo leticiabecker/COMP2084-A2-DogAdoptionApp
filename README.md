@@ -23,7 +23,7 @@ Logged in:
 * Local account
 * Google
 * Facebook
-* Twitter
+* Twitter (Bonus 1)
 * Microsoft
 
 Deployed project URL: http://comp2084-a2-dogadoption-leticia.azurewebsites.net/
