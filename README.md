@@ -18,7 +18,7 @@ Logged in:
 * Add a new shelter to the list
 * Edit/Delete an existing shelter record
 
-####The log in options are:
+#### The log in options are:
 
 * Local account
 * Google
