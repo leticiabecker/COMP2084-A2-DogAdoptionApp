@@ -42,17 +42,18 @@ a {
     padding: 40px 15px;
 }
 
-nav.navbar {
+nav.navbar, ul.navbar-right {
     background-color: #0E7983;
     border: 0;
     color: #FFF;
 }
 
-    nav.navbar a {
+    nav.navbar a, ul.navbar-right li a {
         color: #FFF;
+        text-decoration: none;
     }
 
-        nav.navbar a:visited {
+        nav .navbar a:visited {
             color: #e7e7e7;
         }
 
@@ -60,6 +61,32 @@ nav.navbar {
     text-transform: uppercase;
 }
 
+ul.navbar-right li a {
+    padding: 8px;
+    margin-left: 8px;
+    background-color: #a0d9d0;
+    color: #0e7983;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+    ul.navbar-right li a[title="Manage"] {
+        background-color: transparent;
+        color: #a0d9d0;
+        font-size: 0.7rem;
+    }
+
+        ul.navbar-right li a[title="Manage"]:hover {
+            background-color: transparent;
+            color: rgb(255, 255, 255);
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+
+    ul.navbar-right li a:hover {
+        background-color: #4f3d34;
+        color: #a0d9d0;
+    }
 
 .carousel-item img {
     width: 100%;
@@ -73,7 +100,7 @@ nav.navbar {
         font-size: 4rem;
     }
 
-img#dogHome {
+#dogHome {
     border-radius: 50%;
     width: 100%;
     max-width: 300px;
@@ -88,7 +115,6 @@ div.btn {
 
     .btn:hover {
         background-color: #4f3d34;
-       
     }
 
     .btn a {
@@ -139,8 +165,8 @@ footer {
     padding: 10px 0 20px 0;
 }
 
-footer p {
-    text-align: center;
-    color: #808080;
-    margin: 0 auto;
-}
+    footer p {
+        text-align: center;
+        color: #808080;
+        margin: 0 auto;
+    }
