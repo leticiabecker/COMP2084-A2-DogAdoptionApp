@@ -19,12 +19,15 @@ namespace DogAdoptionApp.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Breed")]
         public string DogBreed { get; set; }
 
+        [Display(Name = "Age")]
         public int DogAge { get; set; }
 
         [Required]
         [StringLength(20)]
+        [Display(Name = "Gender")]
         public string DogGender { get; set; }
 
         public int ShelterId { get; set; }
