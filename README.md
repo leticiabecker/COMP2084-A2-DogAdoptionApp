@@ -18,12 +18,12 @@ Logged in:
 * Add a new shelter to the list
 * Edit/Delete an existing shelter record
 
-####The log in options are:
+#### The log in options are:
 
 * Local account
 * Google
 * Facebook
-* Twitter
+* Twitter (Bonus 1)
 * Microsoft
 
 Deployed project URL: http://comp2084-a2-dogadoption-leticia.azurewebsites.net/
