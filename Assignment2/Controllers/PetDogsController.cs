@@ -126,16 +126,26 @@ namespace DogAdoptionApp.Controllers
         //    return View(petDog);
         //}
 
-        //// POST: PetDogs/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    PetDog petDog = db.PetDogs.Find(id);
-        //    db.PetDogs.Remove(petDog);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        // POST: PetDogs/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ViewResult DeleteConfirmed(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");
+            }
+
+            PetDog petDog = db.PetDogs.FirstOrDefault(d => d.DogId == id);
+
+            if (petDog == null)
+            {
+                return View("Error");
+            }
+
+            db.Delete(petDog);
+            return View("Index");
+        }
 
         //protected override void Dispose(bool disposing)
         //{
