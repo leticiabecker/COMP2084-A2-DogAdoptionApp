@@ -38,20 +38,20 @@ namespace DogAdoptionApp.Controllers
             return View(petDogs.ToList());
         }
 
-        //// GET: PetDogs/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    PetDog petDog = db.PetDogs.Find(id);
-        //    if (petDog == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(petDog);
-        //}
+        // GET: PetDogs/Details/5
+        public ViewResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return View("Error");
+            }
+            PetDog petDog = db.PetDogs.FirstOrDefault(d => d.DogId == id);
+            if (petDog == null)
+            {
+                return View("Error");
+            }
+            return View(petDog);
+        }
 
         //// GET: PetDogs/Create
         //public ActionResult Create()

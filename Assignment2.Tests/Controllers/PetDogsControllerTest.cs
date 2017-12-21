@@ -45,6 +45,8 @@ namespace Assignment2.Tests.Controllers
             controller = new PetDogsController(mock.Object);
         }
 
+        // INDEX TESTS
+
         [TestMethod]
         public void IndexLoadsIndex()
         {
@@ -64,6 +66,19 @@ namespace Assignment2.Tests.Controllers
 
             // assert
             CollectionAssert.AreEqual(dogs, actual);
+        }
+
+
+        // DETAILS TESTS
+
+        [TestMethod]
+        public void DetailsValidDog()
+        {
+            //act
+            var actual = (PetDog)controller.Details(1).Model;
+
+            // assert
+            Assert.AreEqual(dogs.ToList()[0], actual);
         }
     }
 }
