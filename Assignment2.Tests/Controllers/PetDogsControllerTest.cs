@@ -80,5 +80,15 @@ namespace Assignment2.Tests.Controllers
             // assert
             Assert.AreEqual(dogs.ToList()[0], actual);
         }
+
+        [TestMethod]
+        public void DetailsInvalidId()
+        {
+            //act
+            ViewResult actual = controller.Details(4);
+
+            // assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
     }
 }
