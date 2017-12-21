@@ -199,7 +199,9 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DogAdoptionAppModel.cs" />
+    <Compile Include="Models\EFPetDogsRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IPetDogsRepository.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PetDog.cs" />
     <Compile Include="Models\Shelter.cs" />
