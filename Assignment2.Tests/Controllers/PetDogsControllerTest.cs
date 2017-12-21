@@ -90,5 +90,15 @@ namespace Assignment2.Tests.Controllers
             // assert
             Assert.AreEqual("Error", actual.ViewName);
         }
+
+        [TestMethod]
+        public void DetailsInvalidNoId()
+        {
+            //act
+            ViewResult actual = controller.Details(null);
+
+            // assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
     }
 }
