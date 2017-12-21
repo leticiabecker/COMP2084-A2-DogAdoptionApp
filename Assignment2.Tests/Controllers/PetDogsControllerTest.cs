@@ -55,5 +55,15 @@ namespace Assignment2.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void IndexShowsValidDogs()
+        {
+            // act
+            var actual = (List<PetDog>)controller.Index().Model;
+
+            // assert
+            CollectionAssert.AreEqual(dogs, actual);
+        }
     }
 }

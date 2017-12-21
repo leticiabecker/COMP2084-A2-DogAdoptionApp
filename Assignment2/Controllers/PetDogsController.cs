@@ -32,7 +32,7 @@ namespace DogAdoptionApp.Controllers
 
         [AllowAnonymous]
         // GET: PetDogs
-        public ActionResult Index()
+        public ViewResult Index()
         {
             var petDogs = db.PetDogs.Include(p => p.Shelter);
             return View(petDogs.ToList());
