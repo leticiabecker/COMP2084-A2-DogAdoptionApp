@@ -120,5 +120,15 @@ namespace Assignment2.Tests.Controllers
             // assert
             Assert.AreEqual("Error", actual.ViewName);
         }
+
+        [TestMethod]
+        public void DeleteConfirmedNoId()
+        {
+            //act
+            ViewResult actual = controller.DeleteConfirmed(null);
+
+            // assert
+            Assert.AreEqual("Error", actual.ViewName);
+        }
     }
 }
