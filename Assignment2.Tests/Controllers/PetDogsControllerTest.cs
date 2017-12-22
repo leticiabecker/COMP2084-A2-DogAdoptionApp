@@ -8,8 +8,8 @@ using System.Web.Mvc;
 using DogAdoptionApp.Controllers;
 using Moq;
 using DogAdoptionApp.Models;
-using System.Linq;
 using Assignment2.Models;
+using System.Linq;
 
 namespace Assignment2.Tests.Controllers
 {
@@ -47,6 +47,7 @@ namespace Assignment2.Tests.Controllers
 
         // INDEX TESTS
 
+        //Index loads the correct View
         [TestMethod]
         public void IndexLoadsIndex()
         {
@@ -58,6 +59,7 @@ namespace Assignment2.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
+        //Index loads the correct type of data in a List
         [TestMethod]
         public void IndexShowsValidDogs()
         {
@@ -71,6 +73,7 @@ namespace Assignment2.Tests.Controllers
 
         // DETAILS TESTS
 
+        //Details loads the correct object if passed a valid Id
         [TestMethod]
         public void DetailsValidDog()
         {
@@ -81,6 +84,7 @@ namespace Assignment2.Tests.Controllers
             Assert.AreEqual(dogs.ToList()[0], actual);
         }
 
+        //Details loads the error view if passed an invalid id
         [TestMethod]
         public void DetailsInvalidId()
         {
@@ -91,6 +95,7 @@ namespace Assignment2.Tests.Controllers
             Assert.AreEqual("Error", actual.ViewName);
         }
 
+        //Details loads the error view if passed no Id
         [TestMethod]
         public void DetailsInvalidNoId()
         {
@@ -101,6 +106,7 @@ namespace Assignment2.Tests.Controllers
             Assert.AreEqual("Error", actual.ViewName);
         }
 
+        //DeleteConfirmed deletes the correct object if passed a valid Id
         [TestMethod]
         public void DeleteConfirmedValidId()
         {
@@ -111,6 +117,7 @@ namespace Assignment2.Tests.Controllers
             Assert.AreEqual("Index", actual.ViewName);
         }
 
+        //DeleteConfirmed loads the error view if passed an invalid id
         [TestMethod]
         public void DeleteConfirmedInvalidId()
         {
@@ -121,6 +128,7 @@ namespace Assignment2.Tests.Controllers
             Assert.AreEqual("Error", actual.ViewName);
         }
 
+        //DeleteConfirmed loads the error view if passed no Id
         [TestMethod]
         public void DeleteConfirmedNoId()
         {

@@ -8,6 +8,8 @@ namespace Assignment2.Models
 {
     public class EFPetDogsRepository : IPetDogsRepository
     {
+        // repository for CRUD with Dogs in SQL Server db
+
         // db connection moved here from PetDogsController
         DogAdoptionAppModel db = new DogAdoptionAppModel();
 
@@ -15,25 +17,25 @@ namespace Assignment2.Models
 
         public IQueryable<Shelter> Shelters { get { return db.Shelters; } }
 
-        public void Delete(PetDog dogs)
+        public void Delete(PetDog dog)
         {
-            db.PetDogs.Remove(dogs);
+            db.PetDogs.Remove(dog);
             db.SaveChanges();
         }
 
-        public PetDog Save(PetDog dogs)
+        public PetDog Save(PetDog dog)
         {
-            if (dogs.DogId == 0)
+            if (dog.DogId == 0)
             {
-                db.PetDogs.Add(dogs);
+                db.PetDogs.Add(dog);
             }
             else
             {
-                db.Entry(dogs).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(dog).State = System.Data.Entity.EntityState.Modified;
             }
 
             db.SaveChanges();
-            return dogs;
+            return dog;
         }
     }
 }

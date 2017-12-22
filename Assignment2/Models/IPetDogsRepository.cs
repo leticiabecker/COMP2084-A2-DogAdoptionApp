@@ -11,7 +11,7 @@ namespace Assignment2.Models
     {
         IQueryable<PetDog> PetDogs { get; }
         IQueryable<Shelter> Shelters { get; }
-        PetDog Save(PetDog dogs);
-        void Delete(PetDog dogs);
+        PetDog Save(PetDog dog);
+        void Delete(PetDog dog);
     }
 }

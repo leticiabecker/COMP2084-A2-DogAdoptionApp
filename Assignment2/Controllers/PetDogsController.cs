@@ -15,7 +15,6 @@ namespace DogAdoptionApp.Controllers
     public class PetDogsController : Controller
     {
         // db connection moved to Models/EFPetDogsRepository.cs
-        //private DogAdoptionAppModel db = new DogAdoptionAppModel();
         private IPetDogsRepository db;
 
         // if no mock specified, use db
